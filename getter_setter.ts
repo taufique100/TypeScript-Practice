@@ -1,7 +1,7 @@
 class User {
     readonly city: string = "Jaipur"
 
-    private _courseCount = 1
+    protected _courseCount = 1
 
     constructor (
         public email: string,
@@ -31,3 +31,10 @@ class User {
 }
 
 const user = new User('tau@gamil.com', 'abcd')
+
+class SubUser extends User{
+    isFamily: boolean = true
+    changeCourseCount(){
+        this._courseCount = 4
+    }
+}
